@@ -5,5 +5,4 @@ format: jb-book
 root: index
 chapters:
   - file: pengantar-web-mining
-  - file: menu-crawl
-  - file: notebook
+  - file: crawl
