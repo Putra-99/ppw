@@ -1,21 +1,8 @@
 # Profile
 
-Halo, perkenalkan nama saya Syehrana Reza Pahlevi Putra.
-Saya adalah mahasiswa Universitas Trunojoyo Madura, Fakultas Teknik, dengan program studi Teknik Informatika.
+Halo, nama saya Syehrana Reza Pahlevi Putra dengan NIM 220411100180, mahasiswa Universitas Trunojoyo Madura pada Fakultas Teknik, Program Studi Teknik Informatika. Saya dapat dihubungi melalui email syehrana@gmail.com
 
-Informasi singkat tentang saya:
-
-Nama : Syehrana Reza Pahlevi Putra
-
-NIM : 220411100180
-
-Email : syehrana@gmail.com
-
-Universitas : Universitas Trunojoyo Madura
-
-Jurusan : Teknik
-
-Program Studi : Teknik Informatika
+Saya memiliki minat pada bidang Web Mining, Machine Learning, serta Pengembangan Sistem Informasi, dan saat ini saya terus mengembangkan pengetahuan serta keterampilan di dunia teknologi informasi.
 
 ```{tableofcontents}
 
