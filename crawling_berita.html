@@ -1,0 +1,1369 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Crawling Website Berita Online &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'crawling_berita';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Crawling Link Website" href="crawling_link.html" />
+    <link rel="prev" title="Crawling Website PTA" href="crawling_pta.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crawling_api.html">Crawling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crawling_pta.html">Crawling Website PTA</a></li>
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Crawling Website Berita Online</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="crawling_link.html">Crawling Link Website</a></li>
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcrawling_berita.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/crawling_berita.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Crawling Website Berita Online</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Crawling Website Berita Online</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#install-library">Install Library</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-teknologi-yang-digunakan-dalam-website">analisis teknologi yang digunakan dalam website</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#web-crawling">Web Crawling</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#web-scraping">Web Scraping</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-scraping-berita">Hasil Scraping Berita</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="crawling-website-berita-online">
+<h1>Crawling Website Berita Online<a class="headerlink" href="#crawling-website-berita-online" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="install-library">
+<h1>Install Library<a class="headerlink" href="#install-library" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>builtwith
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>requests
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>beautifulsoup4
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting builtwith
+  Downloading builtwith-1.3.4.tar.gz (34 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py) ... ?25ldone
+?25hRequirement already satisfied: six in /home/codespace/.local/lib/python3.12/site-packages (from builtwith) (1.17.0)
+Building wheels for collected packages: builtwith
+<span class=" -Color -Color-Yellow">  DEPRECATION: Building &#39;builtwith&#39; using the legacy setup.py bdist_wheel mechanism, which will be removed in a future version. pip 25.3 will enforce this behaviour change. A possible replacement is to use the standardized build interface by setting the `--use-pep517` option, (possibly combined with `--no-build-isolation`), or adding a `pyproject.toml` file to the source tree of &#39;builtwith&#39;. Discussion can be found at https://github.com/pypa/pip/issues/6334</span>
+
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Building wheel for builtwith (setup.py) ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
+?25h  Created wheel for builtwith: filename=builtwith-1.3.4-py3-none-any.whl size=36121 sha256=044ba1db6ee764c1b7b9b9026a9dbc66c53210418a86b49a1f01cde435f187f6
+  Stored in directory: /home/codespace/.cache/pip/wheels/7f/2d/b2/606e3df914d4aeeab99c4a4e3e9a61673d2293c2e346db00c8
+Successfully built builtwith
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: builtwith
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed builtwith-1.3.4
+
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">25.1.1</span> -&gt; <span class=" -Color -Color-Green">25.2</span>
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">python3 -m pip install --upgrade pip</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: requests in /home/codespace/.local/lib/python3.12/site-packages (2.32.4)
+Requirement already satisfied: charset_normalizer&lt;4,&gt;=2 in /home/codespace/.local/lib/python3.12/site-packages (from requests) (3.4.2)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /home/codespace/.local/lib/python3.12/site-packages (from requests) (3.10)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /home/codespace/.local/lib/python3.12/site-packages (from requests) (2.5.0)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /home/codespace/.local/lib/python3.12/site-packages (from requests) (2025.7.9)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">25.1.1</span> -&gt; <span class=" -Color -Color-Green">25.2</span>
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">python3 -m pip install --upgrade pip</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: beautifulsoup4 in /home/codespace/.local/lib/python3.12/site-packages (4.13.4)
+Requirement already satisfied: soupsieve&gt;1.2 in /home/codespace/.local/lib/python3.12/site-packages (from beautifulsoup4) (2.7)
+Requirement already satisfied: typing-extensions&gt;=4.0.0 in /home/codespace/.local/lib/python3.12/site-packages (from beautifulsoup4) (4.14.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">25.1.1</span> -&gt; <span class=" -Color -Color-Green">25.2</span>
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">python3 -m pip install --upgrade pip</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="analisis-teknologi-yang-digunakan-dalam-website">
+<h1>analisis teknologi yang digunakan dalam website<a class="headerlink" href="#analisis-teknologi-yang-digunakan-dalam-website" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">builtwith</span>
+
+<span class="c1"># Analisis teknologi yang digunakan</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">builtwith</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;https://www.antaranews.com/&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;font-scripts&#39;: [&#39;Google Font API&#39;], &#39;web-frameworks&#39;: [&#39;Twitter Bootstrap&#39;], &#39;javascript-frameworks&#39;: [&#39;jQuery&#39;]}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="web-crawling">
+<h1>Web Crawling<a class="headerlink" href="#web-crawling" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">crawl_website</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>  <span class="c1"># Raise an error for bad status codes</span>
+
+        <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Ambil semua judul h1, h2, h3</span>
+        <span class="n">headings</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">([</span><span class="s1">&#39;h1&#39;</span><span class="p">,</span> <span class="s1">&#39;h2&#39;</span><span class="p">,</span> <span class="s1">&#39;h3&#39;</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">heading</span> <span class="ow">in</span> <span class="n">headings</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">heading</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">heading</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Ambil semua link</span>
+        <span class="n">links</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;URL: </span><span class="si">{</span><span class="n">link</span><span class="p">[</span><span class="s1">&#39;href&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> | Teks: </span><span class="si">{</span><span class="n">link</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Terjadi kesalahan saat mengakses </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Gunakan fungsi</span>
+<span class="n">crawl_website</span><span class="p">(</span><span class="s2">&quot;https://www.antaranews.com/terkini&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>h1: Terkini
+h2: Dispendukcapil Ponorogo: Permohonan ubah isi agama pada KTP meningkat
+h2: Wamen PKP pastikan pembangunan perumahan sosial tak ada penggusuran
+h2: Hashim: Perumahan sosial harapan baru Gen Z akses hunian di kota
+h2: Dewan GCC kecam agresi Israel sebagai kejahatan perang di Gaza
+h2: Evaluasi tunjangan rumah DPRD Kepri perlu dikonsultasikan ke Mendagri
+h2: Wamen PKP: Perumnas kembali jadi motor pembangunan rumah rakyat
+h2: BEI: Sukuk daerah sumber pendanaan baru Pemda di luar APBD
+h2: Koalisi advokasi desak asosiasi sepak bola Eropa larang timnas Israel
+h2: Sekda Jabar minta lulusan IPDN jadi pimpinan tangguh tengah tantangan
+h2: Korban tewas akibat agresi Israel di Gaza tembus 65.000
+h2: Pemerintah usulkan 22 RUU masuk Prolegnas Prioritas 2025-2026
+h2: Golkar tegaskan komitmen beri mahasiswa ruang salurkan aspirasi
+h2: Jogja Cultural Wellness Festival hadirkan pengalaman penyembuhan tubuh
+h2: Erick Thohir jadi Menpora, Presiden FIFA beri ucapan selamat
+h2: Pembangunan resort di Pulau Padar kewenangan pemerintah pusat
+h3: Perubahan Kabinet Merah Putih
+h3: Presiden Prabowo lantik Djamari Chaniago sebagai Menko Polkam
+h3: Presiden lantik Wakil Kepala BGN Sony Sanjaya
+h3: Ganti Hasan Nasbi, Angga Raka jabat Kepala Badan Komunikasi Pemerintah
+h3: Menpora Erick Thohir soroti pembangunan pemuda yang kerap terabaikan
+h3: Di tengah isu reshuffle, Ahmad Dofiri beserta istri tiba di Istana
+h3: Presiden Prabowo geser Erick Thohir isi jabatan Menpora
+h3: Djamari ceritakan detik-detik dirinya terpilih jadi Menko Polkam
+h3: Ribuan warga Israel dukung Palestina merdeka dan akhiri perang Gaza
+h3: Menko Yusril: Komisi Reformasi Polri kemungkinan dibentuk bulan depan
+h3: Menpora Erick Thohir soroti pembangunan pemuda yang kerap terabaikan
+h3: Prabowo beri kenaikan pangkat jenderal kehormatan buat Djamari, Dofiri
+h3: Ratusan siswa SMP di Solo ikuti ekskul gim Roblox
+h3: Pertamina sebut belum ada permintaan BBM dari SPBU swasta
+h3: Satu orang yang dilaporkan hilang saat demo di Jakarta ditemukan
+h3: Huawei luncurkan seri Pura 80, tekankan inovasi fotografi mumpuni
+h3: Perubahan Kabinet Merah Putih
+h3: Asiknya gabung ekstrakurikuler gim daring
+h3: Tradisi menggantung perahu hindari hempasan ombak di Pulau Obi
+h3: Presiden Prabowo lantik sejumlah menteri di Istana Negara
+h3: Aksi ojol menuntut perubahan skema bagi hasil
+h3: Mahkamah Konstitusi tolak uji formil UUTNI
+h3: Kabinet Merah Putih reshuffle lagi, Erick Thohir resmi jadi Menpora
+h3: Kemlu masih tunggu informasi resmi kasus penembakan Zetro Purba
+h3: Sejumlah tokoh datangi istana, Erick Thohir isi posisi Menpora
+h3: Wapres Gibran tinjau Cek Kesehatan Gratis di Kabupaten Jayapura
+h3: Menteri UMKM: Dana Rp200 T di Himbara jadi peluang bagi UMKM
+h3: Perubahan Kabinet Merah Putih
+h3: Sikap Indonesia dalam KTT Arab-Islam
+h3: Paket 8+4+5 untuk memacu perekonomian
+h3: Operasi senyap sita setengah ton narkoba
+h3: Realisasi investasi KEK semester I-2025
+URL: https://en.antaranews.com | Teks: English
+URL: https://www.antaranews.com/terkini | Teks: Terkini
+URL: https://www.antaranews.com/terpopuler | Teks: Terpopuler
+URL: https://www.antaranews.com/top-news | Teks: Top News
+URL: https://www.antaranews.com/pilihan-editor | Teks: Pilihan Editor
+URL: https://pemilu.antaranews.com | Teks: Pemilu
+URL: https://otomotif.antaranews.com | Teks: Otomotif
+URL: https://www.antarafoto.com | Teks: Antara Foto
+URL: https://www.antaranews.com/redaksi | Teks: Redaksi
+URL: https://www.antaranews.com/user/login | Teks: 
+URL: https://www.facebook.com/antaranewsdotcom/ | Teks: 
+URL: https://whatsapp.com/channel/0029VaEpX4H7tkizZ5mKk708 | Teks: 
+URL: https://www.twitter.com/antaranews | Teks: 
+URL: https://www.instagram.com/antaranewscom/ | Teks: 
+URL: https://www.youtube.com/@AntaraTV | Teks: 
+URL: https://www.tiktok.com/@antaranews | Teks: 
+URL: https://www.antaranews.com/rss | Teks: 
+URL: / | Teks: 
+
+
+URL: / | Teks:  Home 
+URL: https://www.antaranews.com/politik | Teks: Politik
+URL: https://www.antaranews.com/hukum | Teks: Hukum
+URL: https://www.antaranews.com/ekonomi | Teks: Ekonomi
+URL: https://www.antaranews.com/ekonomi/finansial | Teks: Finansial
+URL: https://www.antaranews.com/ekonomi/bisnis | Teks: Bisnis
+URL: https://www.antaranews.com/ekonomi/bursa | Teks: Bursa
+URL: https://www.antaranews.com/metro | Teks: Metro
+URL: https://www.antaranews.com/metro/kriminalitas | Teks: Kriminalitas
+URL: https://www.antaranews.com/metro/lintas-kota | Teks: Lintas Kota
+URL: https://www.antaranews.com/metro/lenggang-jakarta | Teks: Lenggang Jakarta
+URL: https://www.antaranews.com/sepakbola | Teks: Sepakbola
+URL: https://www.antaranews.com/sepakbola/liga-indonesia | Teks: Indonesia 	
+URL: https://www.antaranews.com/sepakbola/internasional | Teks: Internasional
+URL: https://www.antaranews.com/sepakbola/liga-inggris-premier | Teks: Liga Inggris
+URL: https://www.antaranews.com/sepakbola/liga-spanyol | Teks: Liga Spanyol
+URL: https://www.antaranews.com/sepakbola/liga-italia-seri-a | Teks: Liga Italia
+URL: https://www.antaranews.com/sepakbola/liga-champions | Teks: Liga Champions
+URL: https://www.antaranews.com/sepakbola/liga-liga-dunia | Teks: Liga-Liga Lain
+URL: https://www.antaranews.com/olahraga | Teks: Olahraga
+URL: https://www.antaranews.com/olahraga/bulutangkis | Teks: Bulutangkis
+URL: https://www.antaranews.com/olahraga/bola-basket | Teks: Bola Basket
+URL: https://www.antaranews.com/olahraga/tenis | Teks: Tenis
+URL: https://www.antaranews.com/olahraga/balap | Teks: Balap
+URL: https://www.antaranews.com/olahraga/all-sport | Teks: All Sport
+URL: https://www.antaranews.com/humaniora | Teks: Humaniora
+URL: # | Teks: Lainnya
+URL: https://www.antaranews.com/lifestyle | Teks: Lifestyle
+URL: https://www.antaranews.com/hiburan | Teks: Hiburan
+URL: https://www.antaranews.com/nusantara | Teks: Nusantara
+URL: https://www.antaranews.com/dunia | Teks: Dunia
+URL: https://www.antaranews.com/infografik | Teks: Infografik
+URL: https://www.antaranews.com/foto | Teks: Foto
+URL: https://www.antaranews.com/video | Teks: Video
+URL: https://www.antaranews.com/tekno | Teks: Tekno
+URL: https://otomotif.antaranews.com | Teks: Otomotif
+URL: https://www.antaranews.com/warta-bumi | Teks: Warta Bumi
+URL: https://www.antaranews.com/rilis-pers | Teks: Rilis Pers
+URL: https://www.antaranews.com/jaringan-antara-cegah-hoax | Teks: Anti Hoax
+URL: https://www.antaranews.com/mata-indonesia | Teks: Mata Indonesia
+URL: https://www.antaranews.com/slug/antara-doeloe | Teks: ANTARA Doeloe
+URL: https://en.antaranews.com | Teks: English Edition
+URL: # | Teks: 
+URL: https://www.antaranews.com | Teks:  ANTARA 
+URL: https://www.antaranews.com/terkini | Teks: Terkini
+URL: https://www.antaranews.com/terkini | Teks: Terkini
+URL: https://www.antaranews.com/berita/5116793/dispendukcapil-ponorogo-permohonan-ubah-isi-agama-pada-ktp-meningkat | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/berita/5116793/dispendukcapil-ponorogo-permohonan-ubah-isi-agama-pada-ktp-meningkat | Teks: Dispendukcapil Ponorogo: Permohonan ubah isi agama pada KTP meningkat
+URL: https://www.antaranews.com/berita/5116789/wamen-pkp-pastikan-pembangunan-perumahan-sosial-tak-ada-penggusuran | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/berita/5116789/wamen-pkp-pastikan-pembangunan-perumahan-sosial-tak-ada-penggusuran | Teks: Wamen PKP pastikan pembangunan perumahan sosial tak ada penggusuran
+URL: https://www.antaranews.com/berita/5116785/hashim-perumahan-sosial-harapan-baru-gen-z-akses-hunian-di-kota | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/berita/5116785/hashim-perumahan-sosial-harapan-baru-gen-z-akses-hunian-di-kota | Teks: Hashim: Perumahan sosial harapan baru Gen Z akses hunian di kota
+URL: https://www.antaranews.com/berita/5116781/dewan-gcc-kecam-agresi-israel-sebagai-kejahatan-perang-di-gaza | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/berita/5116781/dewan-gcc-kecam-agresi-israel-sebagai-kejahatan-perang-di-gaza | Teks: Dewan GCC kecam agresi Israel sebagai kejahatan perang di Gaza
+URL: https://www.antaranews.com/berita/5116777/evaluasi-tunjangan-rumah-dprd-kepri-perlu-dikonsultasikan-ke-mendagri | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/berita/5116777/evaluasi-tunjangan-rumah-dprd-kepri-perlu-dikonsultasikan-ke-mendagri | Teks: Evaluasi tunjangan rumah DPRD Kepri perlu dikonsultasikan ke Mendagri
+URL: https://www.antaranews.com/berita/5116769/wamen-pkp-perumnas-kembali-jadi-motor-pembangunan-rumah-rakyat | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/berita/5116769/wamen-pkp-perumnas-kembali-jadi-motor-pembangunan-rumah-rakyat | Teks: Wamen PKP: Perumnas kembali jadi motor pembangunan rumah rakyat
+URL: https://www.antaranews.com/berita/5116765/bei-sukuk-daerah-sumber-pendanaan-baru-pemda-di-luar-apbd | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/berita/5116765/bei-sukuk-daerah-sumber-pendanaan-baru-pemda-di-luar-apbd | Teks: BEI: Sukuk daerah sumber pendanaan baru Pemda di luar APBD
+URL: https://www.antaranews.com/berita/5116761/koalisi-advokasi-desak-asosiasi-sepak-bola-eropa-larang-timnas-israel | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/slug/sepak-bola-dunia | Teks: Sepak Bola Dunia
+URL: https://www.antaranews.com/berita/5116761/koalisi-advokasi-desak-asosiasi-sepak-bola-eropa-larang-timnas-israel | Teks: Koalisi advokasi desak asosiasi sepak bola Eropa larang timnas Israel
+URL: https://www.antaranews.com/berita/5116757/sekda-jabar-minta-lulusan-ipdn-jadi-pimpinan-tangguh-tengah-tantangan | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/berita/5116757/sekda-jabar-minta-lulusan-ipdn-jadi-pimpinan-tangguh-tengah-tantangan | Teks: Sekda Jabar minta lulusan IPDN jadi pimpinan tangguh tengah tantangan
+URL: https://www.antaranews.com/berita/5116753/korban-tewas-akibat-agresi-israel-di-gaza-tembus-65000 | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/berita/5116753/korban-tewas-akibat-agresi-israel-di-gaza-tembus-65000 | Teks: Korban tewas akibat agresi Israel di Gaza tembus 65.000
+URL: https://www.antaranews.com/video/5116469/pemerintah-usulkan-22-ruu-masuk-prolegnas-prioritas-2025-2026 | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/video | Teks: Video
+URL: https://www.antaranews.com/video/5116469/pemerintah-usulkan-22-ruu-masuk-prolegnas-prioritas-2025-2026 | Teks: Pemerintah usulkan 22 RUU masuk Prolegnas Prioritas 2025-2026
+URL: https://www.antaranews.com/berita/5116749/golkar-tegaskan-komitmen-beri-mahasiswa-ruang-salurkan-aspirasi | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/berita/5116749/golkar-tegaskan-komitmen-beri-mahasiswa-ruang-salurkan-aspirasi | Teks: Golkar tegaskan komitmen beri mahasiswa ruang salurkan aspirasi
+URL: https://www.antaranews.com/berita/5116745/jogja-cultural-wellness-festival-hadirkan-pengalaman-penyembuhan-tubuh | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/berita/5116745/jogja-cultural-wellness-festival-hadirkan-pengalaman-penyembuhan-tubuh | Teks: Jogja Cultural Wellness Festival hadirkan pengalaman penyembuhan tubuh
+URL: https://www.antaranews.com/berita/5116741/erick-thohir-jadi-menpora-presiden-fifa-beri-ucapan-selamat | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/berita/5116741/erick-thohir-jadi-menpora-presiden-fifa-beri-ucapan-selamat | Teks: Erick Thohir jadi Menpora, Presiden FIFA beri ucapan selamat
+URL: https://www.antaranews.com/berita/5116737/pembangunan-resort-di-pulau-padar-kewenangan-pemerintah-pusat | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/berita/5116737/pembangunan-resort-di-pulau-padar-kewenangan-pemerintah-pusat | Teks: Pembangunan resort di Pulau Padar kewenangan pemerintah pusat
+URL: # | Teks: 1
+URL: https://www.antaranews.com/terkini/2 | Teks: 2
+URL: https://www.antaranews.com/terkini/3 | Teks: 3
+URL: https://www.antaranews.com/terkini/4 | Teks: 4
+URL: https://www.antaranews.com/terkini/5 | Teks: 5
+URL: https://www.antaranews.com/terkini/6 | Teks: 6
+URL: https://www.antaranews.com/terkini/7 | Teks: 7
+URL: https://www.antaranews.com/terkini/8 | Teks: 8
+URL: https://www.antaranews.com/terkini/9 | Teks: 9
+URL: https://www.antaranews.com/terkini/10 | Teks: 10
+URL: https://www.antaranews.com/terkini/2 | Teks: »
+URL: https://www.antaranews.com/terpopuler | Teks: Terpopuler
+URL: https://www.antaranews.com/infografik/5115861/perubahan-kabinet-merah-putih?utm_source=antaranews&amp;utm_medium=desktop&amp;utm_campaign=popular_right | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/infografik | Teks: Infografik
+URL: https://www.antaranews.com/infografik/5115861/perubahan-kabinet-merah-putih?utm_source=antaranews&amp;utm_medium=desktop&amp;utm_campaign=popular_right | Teks: Perubahan Kabinet Merah Putih
+URL: https://www.antaranews.com/berita/5114965/presiden-prabowo-lantik-djamari-chaniago-sebagai-menko-polkam?utm_source=antaranews&amp;utm_medium=desktop&amp;utm_campaign=popular_right | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/berita/5114965/presiden-prabowo-lantik-djamari-chaniago-sebagai-menko-polkam?utm_source=antaranews&amp;utm_medium=desktop&amp;utm_campaign=popular_right | Teks: Presiden Prabowo lantik Djamari Chaniago sebagai Menko Polkam
+URL: https://www.antaranews.com/berita/5115437/presiden-lantik-wakil-kepala-bgn-sony-sanjaya?utm_source=antaranews&amp;utm_medium=desktop&amp;utm_campaign=popular_right | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/berita/5115437/presiden-lantik-wakil-kepala-bgn-sony-sanjaya?utm_source=antaranews&amp;utm_medium=desktop&amp;utm_campaign=popular_right | Teks: Presiden lantik Wakil Kepala BGN Sony Sanjaya
+URL: https://www.antaranews.com/berita/5115061/ganti-hasan-nasbi-angga-raka-jabat-kepala-badan-komunikasi-pemerintah?utm_source=antaranews&amp;utm_medium=desktop&amp;utm_campaign=popular_right | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/berita/5115061/ganti-hasan-nasbi-angga-raka-jabat-kepala-badan-komunikasi-pemerintah?utm_source=antaranews&amp;utm_medium=desktop&amp;utm_campaign=popular_right | Teks: Ganti Hasan Nasbi, Angga Raka jabat Kepala Badan Komunikasi Pemerintah
+URL: https://www.antaranews.com/berita/5115441/menpora-erick-thohir-soroti-pembangunan-pemuda-yang-kerap-terabaikan?utm_source=antaranews&amp;utm_medium=desktop&amp;utm_campaign=popular_right | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/berita/5115441/menpora-erick-thohir-soroti-pembangunan-pemuda-yang-kerap-terabaikan?utm_source=antaranews&amp;utm_medium=desktop&amp;utm_campaign=popular_right | Teks: Menpora Erick Thohir soroti pembangunan pemuda yang kerap terabaikan
+URL: https://www.antaranews.com/berita/5114549/di-tengah-isu-reshuffle-ahmad-dofiri-beserta-istri-tiba-di-istana?utm_source=antaranews&amp;utm_medium=desktop&amp;utm_campaign=popular_right | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/berita/5114549/di-tengah-isu-reshuffle-ahmad-dofiri-beserta-istri-tiba-di-istana?utm_source=antaranews&amp;utm_medium=desktop&amp;utm_campaign=popular_right | Teks: Di tengah isu reshuffle, Ahmad Dofiri beserta istri tiba di Istana
+URL: https://www.antaranews.com/berita/5115129/presiden-prabowo-geser-erick-thohir-isi-jabatan-menpora?utm_source=antaranews&amp;utm_medium=desktop&amp;utm_campaign=popular_right | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/berita/5115129/presiden-prabowo-geser-erick-thohir-isi-jabatan-menpora?utm_source=antaranews&amp;utm_medium=desktop&amp;utm_campaign=popular_right | Teks: Presiden Prabowo geser Erick Thohir isi jabatan Menpora
+URL: /top-news | Teks: Top News
+URL: https://www.antaranews.com/berita/5116649/djamari-ceritakan-detik-detik-dirinya-terpilih-jadi-menko-polkam | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/berita/5116649/djamari-ceritakan-detik-detik-dirinya-terpilih-jadi-menko-polkam | Teks: Djamari ceritakan detik-detik dirinya terpilih jadi Menko Polkam
+URL: https://www.antaranews.com/berita/5116573/ribuan-warga-israel-dukung-palestina-merdeka-dan-akhiri-perang-gaza | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/berita/5116573/ribuan-warga-israel-dukung-palestina-merdeka-dan-akhiri-perang-gaza | Teks: Ribuan warga Israel dukung Palestina merdeka dan akhiri perang Gaza
+URL: https://www.antaranews.com/berita/5116493/menko-yusril-komisi-reformasi-polri-kemungkinan-dibentuk-bulan-depan | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/berita/5116493/menko-yusril-komisi-reformasi-polri-kemungkinan-dibentuk-bulan-depan | Teks: Menko Yusril: Komisi Reformasi Polri kemungkinan dibentuk bulan depan
+URL: https://www.antaranews.com/berita/5115441/menpora-erick-thohir-soroti-pembangunan-pemuda-yang-kerap-terabaikan | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/berita/5115441/menpora-erick-thohir-soroti-pembangunan-pemuda-yang-kerap-terabaikan | Teks: Menpora Erick Thohir soroti pembangunan pemuda yang kerap terabaikan
+URL: https://www.antaranews.com/berita/5115417/prabowo-beri-kenaikan-pangkat-jenderal-kehormatan-buat-djamari-dofiri | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/berita/5115417/prabowo-beri-kenaikan-pangkat-jenderal-kehormatan-buat-djamari-dofiri | Teks: Prabowo beri kenaikan pangkat jenderal kehormatan buat Djamari, Dofiri
+URL: https://www.antaranews.com/pilihan-editor | Teks: Pilihan Editor
+URL: https://www.antaranews.com/video/5116661/ratusan-siswa-smp-di-solo-ikuti-ekskul-gim-roblox | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/video | Teks: Video
+URL: https://www.antaranews.com/video/5116661/ratusan-siswa-smp-di-solo-ikuti-ekskul-gim-roblox | Teks: Ratusan siswa SMP di Solo ikuti ekskul gim Roblox
+URL: https://www.antaranews.com/berita/5116509/pertamina-sebut-belum-ada-permintaan-bbm-dari-spbu-swasta | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/berita/5116509/pertamina-sebut-belum-ada-permintaan-bbm-dari-spbu-swasta | Teks: Pertamina sebut belum ada permintaan BBM dari SPBU swasta
+URL: https://www.antaranews.com/berita/5116085/satu-orang-yang-dilaporkan-hilang-saat-demo-di-jakarta-ditemukan | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/berita/5116085/satu-orang-yang-dilaporkan-hilang-saat-demo-di-jakarta-ditemukan | Teks: Satu orang yang dilaporkan hilang saat demo di Jakarta ditemukan
+URL: https://www.antaranews.com/berita/5116013/huawei-luncurkan-seri-pura-80-tekankan-inovasi-fotografi-mumpuni | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/berita/5116013/huawei-luncurkan-seri-pura-80-tekankan-inovasi-fotografi-mumpuni | Teks: Huawei luncurkan seri Pura 80, tekankan inovasi fotografi mumpuni
+URL: https://www.antaranews.com/infografik/5115861/perubahan-kabinet-merah-putih | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/infografik | Teks: Infografik
+URL: https://www.antaranews.com/infografik/5115861/perubahan-kabinet-merah-putih | Teks: Perubahan Kabinet Merah Putih
+URL: https://www.antaranews.com/foto | Teks: Foto
+URL: https://www.antaranews.com/foto/5116325/asiknya-gabung-ekstrakurikuler-gim-daring | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/foto/5116325/asiknya-gabung-ekstrakurikuler-gim-daring | Teks: Asiknya gabung ekstrakurikuler gim daring
+URL: https://www.antaranews.com/foto/5116045/tradisi-menggantung-perahu-hindari-hempasan-ombak-di-pulau-obi | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/foto/5116045/tradisi-menggantung-perahu-hindari-hempasan-ombak-di-pulau-obi | Teks: Tradisi menggantung perahu hindari hempasan ombak di Pulau Obi
+URL: https://www.antaranews.com/foto/5115949/presiden-prabowo-lantik-sejumlah-menteri-di-istana-negara | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/foto/5115949/presiden-prabowo-lantik-sejumlah-menteri-di-istana-negara | Teks: Presiden Prabowo lantik sejumlah menteri di Istana Negara
+URL: https://www.antaranews.com/foto/5115753/aksi-ojol-menuntut-perubahan-skema-bagi-hasil | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/foto/5115753/aksi-ojol-menuntut-perubahan-skema-bagi-hasil | Teks: Aksi ojol menuntut perubahan skema bagi hasil
+URL: https://www.antaranews.com/foto/5115521/mahkamah-konstitusi-tolak-uji-formil-uutni | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/foto/5115521/mahkamah-konstitusi-tolak-uji-formil-uutni | Teks: Mahkamah Konstitusi tolak uji formil UUTNI
+URL: https://www.antaranews.com/video | Teks: Video
+URL: https://www.antaranews.com/video/5115457/kabinet-merah-putih-reshuffle-lagi-erick-thohir-resmi-jadi-menpora | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/video/5115457/kabinet-merah-putih-reshuffle-lagi-erick-thohir-resmi-jadi-menpora | Teks: Kabinet Merah Putih reshuffle lagi, Erick Thohir resmi jadi Menpora
+URL: https://www.antaranews.com/video/5115253/kemlu-masih-tunggu-informasi-resmi-kasus-penembakan-zetro-purba | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/video/5115253/kemlu-masih-tunggu-informasi-resmi-kasus-penembakan-zetro-purba | Teks: Kemlu masih tunggu informasi resmi kasus penembakan Zetro Purba
+URL: https://www.antaranews.com/video/5115201/sejumlah-tokoh-datangi-istana-erick-thohir-isi-posisi-menpora | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/video/5115201/sejumlah-tokoh-datangi-istana-erick-thohir-isi-posisi-menpora | Teks: Sejumlah tokoh datangi istana, Erick Thohir isi posisi Menpora
+URL: https://www.antaranews.com/video/5114861/wapres-gibran-tinjau-cek-kesehatan-gratis-di-kabupaten-jayapura | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/video/5114861/wapres-gibran-tinjau-cek-kesehatan-gratis-di-kabupaten-jayapura | Teks: Wapres Gibran tinjau Cek Kesehatan Gratis di Kabupaten Jayapura
+URL: https://www.antaranews.com/video/5114733/menteri-umkm-dana-rp200-t-di-himbara-jadi-peluang-bagi-umkm | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/video/5114733/menteri-umkm-dana-rp200-t-di-himbara-jadi-peluang-bagi-umkm | Teks: Menteri UMKM: Dana Rp200 T di Himbara jadi peluang bagi UMKM
+URL: https://www.antaranews.com/infografik | Teks: Infografik
+URL: https://www.antaranews.com/infografik/5115861/perubahan-kabinet-merah-putih | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/infografik/5115861/perubahan-kabinet-merah-putih | Teks: Perubahan Kabinet Merah Putih
+URL: https://www.antaranews.com/infografik/5115293/sikap-indonesia-dalam-ktt-arab-islam | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/infografik/5115293/sikap-indonesia-dalam-ktt-arab-islam | Teks: Sikap Indonesia dalam KTT Arab-Islam
+URL: https://www.antaranews.com/infografik/5112913/paket-8-4-5-untuk-memacu-perekonomian | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/infografik/5112913/paket-8-4-5-untuk-memacu-perekonomian | Teks: Paket 8+4+5 untuk memacu perekonomian
+URL: https://www.antaranews.com/infografik/5113937/operasi-senyap-sita-setengah-ton-narkoba | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/infografik/5113937/operasi-senyap-sita-setengah-ton-narkoba | Teks: Operasi senyap sita setengah ton narkoba
+URL: https://www.antaranews.com/infografik/5108533/realisasi-investasi-kek-semester-i-2025 | Teks: 
+
+
+
+
+
+URL: https://www.antaranews.com/infografik/5108533/realisasi-investasi-kek-semester-i-2025 | Teks: Realisasi investasi KEK semester I-2025
+URL: https://www.facebook.com/antaranewsdotcom/ | Teks: 
+URL: https://whatsapp.com/channel/0029VaEpX4H7tkizZ5mKk708 | Teks: 
+URL: https://www.twitter.com/antaranews | Teks: 
+URL: https://www.instagram.com/antaranewscom/ | Teks: 
+URL: https://www.youtube.com/@AntaraTV | Teks: 
+URL: https://www.tiktok.com/@antaranews | Teks: 
+URL: https://www.antaranews.com/rss | Teks: 
+URL: https://www.antaranews.com/terkini | Teks: Terkini
+URL: https://www.antaranews.com/top-news | Teks: Top News
+URL: https://www.antaranews.com/terpopuler | Teks: Terpopuler
+URL: https://www.antaranews.com/pilihan-editor | Teks: Pilihan Editor
+URL: https://www.antaranews.com/foto | Teks: Foto
+URL: https://www.antaranews.com/video | Teks: Video
+URL: https://www.antaranews.com/infografik | Teks: Infografik
+URL: https://www.antaranews.com/politik | Teks: Politik
+URL: https://www.antaranews.com/hukum | Teks: Hukum
+URL: https://www.antaranews.com/ekonomi | Teks: Ekonomi
+URL: https://www.antaranews.com/metro | Teks: Metro
+URL: https://www.antaranews.com/sepakbola | Teks: Sepakbola
+URL: https://www.antaranews.com/olahraga | Teks: Olahraga
+URL: https://www.antaranews.com/humaniora | Teks: Humaniora
+URL: https://www.antaranews.com/lifestyle | Teks: Lifestyle
+URL: https://www.antaranews.com/hiburan | Teks: Hiburan
+URL: https://www.antaranews.com/nusantara | Teks: Nusantara
+URL: https://www.antaranews.com/dunia | Teks: Dunia
+URL: https://www.antaranews.com/tekno | Teks: Tekno
+URL: https://otomotif.antaranews.com | Teks: Otomotif
+URL: https://www.antaranews.com/warta-bumi | Teks: Warta Bumi
+URL: https://www.antaranews.com/rilis-pers | Teks: Rilis Pers
+URL: https://www.antaranews.com/karkhas | Teks: Karkhas
+URL: https://www.antaranews.com/jaringan-antara-cegah-hoax | Teks: Anti Hoaks
+URL: https://www.antaranews.com/antara-interaktif | Teks: ANTARA Interaktif
+URL: https://www.antaranews.com/mata-indonesia | Teks: Mata Indonesia
+URL: https://www.antaranews.com/slug/antara-doeloe | Teks: ANTARA Doeloe
+URL: https://en.antaranews.com | Teks: English
+URL: https://www.antaranews.com/user/login | Teks: Masuk
+URL: https://www.antaranews.com/redaksi | Teks: Redaksi
+URL: https://www.antaranews.com/kontak-kami | Teks: Kontak Kami
+URL: https://www.antaranews.com/ketentuan-penggunaan | Teks: Ketentuan Penggunaan
+URL: https://www.antaranews.com/kebijakan-privasi | Teks: Kebijakan Privasi
+URL: https://www.antaranews.com/kebijakan-cookie | Teks: Kebijakan Cookie
+URL: https://www.antaranews.com/pedoman-pemberitaan-media-siber | Teks: Pedoman Media Siber
+URL: https://www.antaranews.com/rss | Teks: RSS
+URL: https://branda.antaranews.com | Teks: BrandA
+URL: https://www.antarafoto.com | Teks: ANTARA Foto
+URL: https://korporat.antaranews.com | Teks: Korporat
+URL: https://ppid.antaranews.com | Teks: PPID
+URL: javascript: | Teks: 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="web-scraping">
+<h1>Web Scraping<a class="headerlink" href="#web-scraping" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">crawl_berita_antaranews</span><span class="p">(</span><span class="n">rss_url</span><span class="o">=</span><span class="s2">&quot;https://www.antaranews.com/rss/terkini.xml&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Crawl berita dari ANTARA News menggunakan RSS feed.</span>
+<span class="sd">    Mengembalikan DataFrame dengan kolom:</span>
+<span class="sd">    id_berita, judul_berita, isi_berita, kategori_berita</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;User-Agent&quot;</span><span class="p">:</span> <span class="s2">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) &quot;</span>
+                      <span class="s2">&quot;AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0 Safari/537.36&quot;</span>
+    <span class="p">}</span>
+    <span class="n">session</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">headers</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">rss_url</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+        <span class="n">r</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Gagal mengakses RSS:&quot;</span><span class="p">,</span> <span class="n">rss_url</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s2">&quot;xml&quot;</span><span class="p">)</span>
+    <span class="n">items</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;item&quot;</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+        <span class="n">link_tag</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;link&quot;</span><span class="p">)</span>
+        <span class="n">link</span> <span class="o">=</span> <span class="n">link_tag</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">if</span> <span class="n">link_tag</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="n">judul</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">title</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+        <span class="n">guid</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">guid</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">guid</span> <span class="k">else</span> <span class="p">(</span><span class="n">link</span> <span class="ow">or</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="n">kategori</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">category</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">category</span> <span class="k">else</span> <span class="kc">None</span>
+
+        <span class="n">isi</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">link</span><span class="p">:</span>
+            <span class="c1"># kalau tidak ada link, skip</span>
+            <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                <span class="s2">&quot;id_berita&quot;</span><span class="p">:</span> <span class="n">guid</span><span class="p">,</span>
+                <span class="s2">&quot;judul_berita&quot;</span><span class="p">:</span> <span class="n">judul</span><span class="p">,</span>
+                <span class="s2">&quot;isi_berita&quot;</span><span class="p">:</span> <span class="n">isi</span><span class="p">,</span>
+                <span class="s2">&quot;kategori_berita&quot;</span><span class="p">:</span> <span class="n">kategori</span> <span class="ow">or</span> <span class="s2">&quot;Tidak Ada&quot;</span>
+            <span class="p">})</span>
+            <span class="k">continue</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">r2</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">link</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+            <span class="n">r2</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+            <span class="n">soup2</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">r2</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+
+            <span class="c1"># ambil isi (beberapa alternatif selector sebagai fallback)</span>
+            <span class="n">konten</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">soup2</span><span class="o">.</span><span class="n">select_one</span><span class="p">(</span><span class="s2">&quot;div.wrap__article-detail-content.post-content&quot;</span><span class="p">)</span>
+                <span class="ow">or</span> <span class="n">soup2</span><span class="o">.</span><span class="n">select_one</span><span class="p">(</span><span class="s2">&quot;div.article-content&quot;</span><span class="p">)</span>
+                <span class="ow">or</span> <span class="n">soup2</span><span class="o">.</span><span class="n">select_one</span><span class="p">(</span><span class="s2">&quot;div.article-body&quot;</span><span class="p">)</span>
+                <span class="ow">or</span> <span class="n">soup2</span><span class="o">.</span><span class="n">select_one</span><span class="p">(</span><span class="s2">&quot;article&quot;</span><span class="p">)</span>
+                <span class="ow">or</span> <span class="n">soup2</span><span class="o">.</span><span class="n">select_one</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">)</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">konten</span><span class="p">:</span>
+                <span class="n">isi</span> <span class="o">=</span> <span class="n">konten</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">separator</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+            <span class="c1"># ambil kategori dari breadcrumbs (lebih andal untuk struktur yang kamu kirim)</span>
+            <span class="n">breadcrumbs</span> <span class="o">=</span> <span class="n">soup2</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;ul.breadcrumbs a.breadcrumbs__url&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">breadcrumbs</span><span class="p">:</span>
+                <span class="c1"># Struktur umum: [Home, Kategori, Judul Artikel]</span>
+                <span class="c1"># Pilih item kedua jika ada, atau item -2 (jika last adalah judul)</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">breadcrumbs</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>
+                    <span class="n">kategori</span> <span class="o">=</span> <span class="n">breadcrumbs</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">breadcrumbs</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+                    <span class="c1"># kalau hanya Home + Kategori, ambil index 1</span>
+                    <span class="n">kategori</span> <span class="o">=</span> <span class="n">breadcrumbs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">kategori</span> <span class="o">=</span> <span class="n">breadcrumbs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="c1"># Jika ada error saat fetch halaman artikel, tetap simpan meta dari RSS</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Warning: gagal mengambil halaman artikel </span><span class="si">{</span><span class="n">link</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+            <span class="s2">&quot;id_berita&quot;</span><span class="p">:</span> <span class="n">guid</span><span class="p">,</span>
+            <span class="s2">&quot;judul_berita&quot;</span><span class="p">:</span> <span class="n">judul</span><span class="p">,</span>
+            <span class="s2">&quot;isi_berita&quot;</span><span class="p">:</span> <span class="n">isi</span><span class="p">,</span>
+            <span class="s2">&quot;kategori_berita&quot;</span><span class="p">:</span> <span class="n">kategori</span> <span class="ow">or</span> <span class="s2">&quot;Tidak Ada&quot;</span>
+        <span class="p">})</span>
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span>
+
+<span class="c1"># Contoh penggunaan:</span>
+<span class="n">df_berita</span> <span class="o">=</span> <span class="n">crawl_berita_antaranews</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_berita</span><span class="p">[[</span><span class="s2">&quot;judul_berita&quot;</span><span class="p">,</span> <span class="s2">&quot;kategori_berita&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">df_berita</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;berita_antaranews.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8-sig&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Berhasil mengambil&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_berita</span><span class="p">),</span> <span class="s2">&quot;berita.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                        judul_berita kategori_berita
+0  Dispendukcapil Ponorogo: Permohonan ubah isi a...       Humaniora
+1  Wamen PKP pastikan pembangunan perumahan sosia...          Bisnis
+2  Hashim: Perumahan sosial harapan baru Gen Z ak...          Bisnis
+3  Dewan GCC kecam agresi Israel sebagai kejahata...   Internasional
+4  Evaluasi tunjangan rumah DPRD Kepri perlu diko...         Politik
+5  Wamen PKP: Perumnas kembali jadi motor pembang...          Bisnis
+6  BEI: Sukuk daerah sumber pendanaan baru Pemda ...           Bursa
+7  Koalisi advokasi desak asosiasi sepak bola Ero...   Internasional
+8  Sekda Jabar minta lulusan IPDN jadi pimpinan t...         Politik
+9  Korban tewas akibat agresi Israel di Gaza temb...   Internasional
+Berhasil mengambil 50 berita.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="hasil-scraping-berita">
+<h1>Hasil Scraping Berita<a class="headerlink" href="#hasil-scraping-berita" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;berita_antaranews.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id_berita</th>
+      <th>judul_berita</th>
+      <th>isi_berita</th>
+      <th>kategori_berita</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>https://www.antaranews.com/berita/5116793/disp...</td>
+      <td>Dispendukcapil Ponorogo: Permohonan ubah isi a...</td>
+      <td>Ponorogo, Jawa Timur (ANTARA) - Dinas Kependud...</td>
+      <td>Humaniora</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>https://www.antaranews.com/berita/5116789/wame...</td>
+      <td>Wamen PKP pastikan pembangunan perumahan sosia...</td>
+      <td>Jakarta (ANTARA) - Wakil Menteri Perumahan dan...</td>
+      <td>Bisnis</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>https://www.antaranews.com/berita/5116785/hash...</td>
+      <td>Hashim: Perumahan sosial harapan baru Gen Z ak...</td>
+      <td>Jakarta (ANTARA) - Ketua Satgas Perumahan Hash...</td>
+      <td>Bisnis</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>https://www.antaranews.com/berita/5116781/dewa...</td>
+      <td>Dewan GCC kecam agresi Israel sebagai kejahata...</td>
+      <td>Riyadh (ANTARA) - Sekretaris Jenderal Dewan Ke...</td>
+      <td>Internasional</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>https://www.antaranews.com/berita/5116777/eval...</td>
+      <td>Evaluasi tunjangan rumah DPRD Kepri perlu diko...</td>
+      <td>Tanjungpinang (ANTARA) - Gubernur Kepulauan Ri...</td>
+      <td>Politik</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="crawling_pta.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Crawling Website PTA</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="crawling_link.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Crawling Link Website</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Crawling Website Berita Online</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#install-library">Install Library</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-teknologi-yang-digunakan-dalam-website">analisis teknologi yang digunakan dalam website</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#web-crawling">Web Crawling</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#web-scraping">Web Scraping</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-scraping-berita">Hasil Scraping Berita</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
