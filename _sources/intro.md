@@ -1,11 +1,8 @@
-# Welcome to your Jupyter Book
+# Profile
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+Halo, nama saya Syehrana Reza Pahlevi Putra dengan NIM 220411100180, mahasiswa Universitas Trunojoyo Madura pada Fakultas Teknik, Program Studi Teknik Informatika. Saya dapat dihubungi melalui emai[syehrana@gmail.com].
 
-Check out the content pages bundled with this sample book to see more.
+Saya memiliki minat pada bidang Web Mining, Machine Learning, serta Pengembangan Sistem Informasi, dan saat ini saya terus mengembangkan pengetahuan serta keterampilan di dunia teknologi informasi.
 
 ```{tableofcontents}
 ```
