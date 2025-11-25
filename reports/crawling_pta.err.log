@@ -1,36 +1,162 @@
 Traceback (most recent call last):
-  File "/home/codespace/.local/lib/python3.12/site-packages/jupyter_core/utils/__init__.py", line 154, in wrapped
-    asyncio.get_running_loop()
-RuntimeError: no running event loop
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+  File "C:\laragon\www\ppw-1\venv\lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
     executenb(
-  File "/home/codespace/.local/lib/python3.12/site-packages/nbclient/client.py", line 1319, in execute
+  File "C:\laragon\www\ppw-1\venv\lib\site-packages\nbclient\client.py", line 1305, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/codespace/.local/lib/python3.12/site-packages/jupyter_core/utils/__init__.py", line 158, in wrapped
+  File "C:\laragon\www\ppw-1\venv\lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
     return loop.run_until_complete(inner)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/python/3.12.1/lib/python3.12/asyncio/base_events.py", line 684, in run_until_complete
+  File "C:\laragon\bin\python\python-3.10\lib\asyncio\base_events.py", line 646, in run_until_complete
     return future.result()
-           ^^^^^^^^^^^^^^^
-  File "/home/codespace/.local/lib/python3.12/site-packages/nbclient/client.py", line 709, in async_execute
+  File "C:\laragon\www\ppw-1\venv\lib\site-packages\nbclient\client.py", line 705, in async_execute
     await self.async_execute_cell(
-  File "/home/codespace/.local/lib/python3.12/site-packages/nbclient/client.py", line 1005, in async_execute_cell
-    exec_reply = await self.task_poll_for_reply
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/codespace/.local/lib/python3.12/site-packages/nbclient/client.py", line 806, in _async_poll_for_reply
-    error_on_timeout_execute_reply = await self._async_handle_timeout(timeout, cell)
-                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/codespace/.local/lib/python3.12/site-packages/nbclient/client.py", line 856, in _async_handle_timeout
-    raise CellTimeoutError.error_from_timeout_and_cell(
-nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
-The message was: Cell execution timed out.
-Here is a preview of the cell contents:
--------------------
-ptaa()
--------------------
+  File "C:\laragon\www\ppw-1\venv\lib\site-packages\nbclient\client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\laragon\www\ppw-1\venv\lib\site-packages\nbclient\client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import pandas as pd
+import requests, time, json, os, sys
+from bs4 import BeautifulSoup
+
+PROGRESS_FILE = "pta_progress.json"
+DATA_FILE = "pta.csv"
+
+def save_progress(prodi_id, page):
+    progress = {}
+    if os.path.exists(PROGRESS_FILE):
+        with open(PROGRESS_FILE, "r") as f:
+            progress = json.load(f)
+    progress["last_prodi"] = prodi_id
+    progress["last_page"] = page
+    with open(PROGRESS_FILE, "w") as f:
+        json.dump(progress, f)
+
+def load_progress():
+    if os.path.exists(PROGRESS_FILE):
+        with open(PROGRESS_FILE, "r") as f:
+            progress = json.load(f)
+        return progress.get("last_prodi", 1), progress.get("last_page", 0)
+    return 1, 0
+
+def safe_get(session, url, retries=3, delay=2):
+    for attempt in range(retries):
+        try:
+            r = session.get(url, timeout=15)
+            r.raise_for_status()
+            return r
+        except Exception as e:
+            print(f"\nGagal akses {url} (percobaan {attempt+1}/{retries}): {e}")
+            time.sleep(delay)
+    return None
+
+def ptaa(prodi_ids=range(1, 41), pages_per_prodi=3):
+    """Scrape PTA Trunojoyo, maksimal pages_per_prodi halaman tiap prodi."""
+    # lanjutkan data lama kalau ada
+    if os.path.exists(DATA_FILE):
+        df = pd.read_csv(DATA_FILE)
+        data = df.to_dict(orient="list")
+    else:
+        data = {
+            "penulis": [], "judul": [], "pembimbing_pertama": [],
+            "pembimbing_kedua": [], "abstrak": [], "abstraction": []
+        }
+
+    session = requests.Session()
+    session.headers.update({"User-Agent": "Mozilla/5.0"})
+
+    last_prodi, last_page = load_progress()
+
+    # cek jumlah halaman tiap prodi
+    total_pages_all = {}
+    for j in prodi_ids:
+        url_first = f"https://pta.trunojoyo.ac.id/c_search/byprod/{j}/1"
+        r = safe_get(session, url_first)
+        if r is None:
+            total_pages_all[j] = 1
+            continue
+        soup = BeautifulSoup(r.content, "html.parser")
+        last_link = soup.select_one('ol.pagination a:contains("»")')
+        if last_link and last_link.has_attr('href'):
+            total_pages = int(last_link['href'].rstrip('/').split('/')[-1])
+        else:
+            pages = [int(a.text) for a in soup.select('ol.pagination a') if a.text.isdigit()]
+            total_pages = max(pages) if pages else 1
+        total_pages_all[j] = total_pages
+
+    for j in prodi_ids:
+        if j < last_prodi:
+            continue
+
+        total_pages = total_pages_all[j]
+        print(f"\nProdi {j} punya {total_pages} halaman")
+
+        start_page = last_page + 1 if j == last_prodi else 1
+        start_time = time.time()
+
+        # batasi 3 halaman per prodi (atau sesuai parameter)
+        max_pages = min(total_pages, pages_per_prodi)
+
+        for i in range(start_page, max_pages + 1):
+            try:
+                url = f"https://pta.trunojoyo.ac.id/c_search/byprod/{j}/{i}"
+                print(f"Scraping {url}")
+                r = safe_get(session, url)
+                if r is None:
+                    continue
+                soup = BeautifulSoup(r.content, "html.parser")
+                jurnals = soup.select('li[data-cat="#luxury"]')
+
+                for jurnal in jurnals:
+                    r_jurnal = safe_get(session, jurnal.select_one('a.gray.button')['href'])
+                    if r_jurnal is None:
+                        continue
+                    soup1 = BeautifulSoup(r_jurnal.content, "html.parser")
+
+                    isi = soup1.select_one('div#content_journal')
+                    judul = isi.select_one('a.title').text
+
+                    penulis = isi.select_one('span:contains("Penulis")').text.split(' : ')[1]
+                    pembimbing_pertama = isi.select_one('span:contains("Dosen Pembimbing I")').text.split(' : ')[1]
+                    pembimbing_kedua = isi.select_one('span:contains("Dosen Pembimbing II")').text.split(' :')[1]
+
+                    ps = isi.select('p[align="justify"]')
+                    abstrak = ps[0].get_text(separator=' ', strip=True) if ps else ""
+                    abstraction = ps[1].get_text(separator=' ', strip=True) if len(ps) > 1 else ""
+
+                    data["penulis"].append(penulis)
+                    data["judul"].append(judul)
+                    data["pembimbing_pertama"].append(pembimbing_pertama)
+                    data["pembimbing_kedua"].append(pembimbing_kedua)
+                    data["abstrak"].append(abstrak)
+                    data["abstraction"].append(abstraction)
+
+                # simpan progres dan CSV setiap halaman
+                save_progress(j, i)
+                pd.DataFrame(data).to_csv(DATA_FILE, index=False, encoding="utf-8-sig")
+
+                time.sleep(1)
+
+            except KeyboardInterrupt:
+                print("\nProses dihentikan user. Progres disimpan.")
+                pd.DataFrame(data).to_csv(DATA_FILE, index=False, encoding="utf-8-sig")
+                return pd.DataFrame(data)
+            except Exception as e:
+                print(f"\nGagal halaman {i} prodi {j}: {e}")
+                continue
+
+    print("\nSelesai scraping.")
+    pd.DataFrame(data).to_csv(DATA_FILE, index=False, encoding="utf-8-sig")
+    return pd.DataFrame(data)
+------------------
+
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [1;32mIn[4], line 1[0m
+[1;32m----> 1[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mpandas[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[38;5;21;01mpd[39;00m
+[0;32m      2[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mrequests[39;00m[38;5;241m,[39m[38;5;250m [39m[38;5;21;01mtime[39;00m[38;5;241m,[39m[38;5;250m [39m[38;5;21;01mjson[39;00m[38;5;241m,[39m[38;5;250m [39m[38;5;21;01mos[39;00m[38;5;241m,[39m[38;5;250m [39m[38;5;21;01msys[39;00m
+[0;32m      3[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mbs4[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m BeautifulSoup
+
+[1;31mModuleNotFoundError[0m: No module named 'pandas'
 
